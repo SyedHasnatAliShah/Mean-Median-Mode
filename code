@@ -1,0 +1,28 @@
+import operator
+total_values=int(input())
+lst= [int(x) for x in input().split()]  
+ad=0
+mean=0
+for d in lst:
+    ad+=d
+mean=ad/len(lst)
+print(mean)
+lst.sort()
+med=0
+med = int((len(lst)+1)/2)
+for f in range(len(lst)):
+    if lst[f]==lst[med]:
+        aa=lst[f-1]
+        bb=lst[f]
+        p=float((aa+bb)/2)
+        print(p)
+    
+#print (med)
+dic={}
+for c in lst:
+    count=0
+    for k in lst:
+        if c==k:
+            count+=1
+    dic[c]=count
+print (max(dic.items(), key=operator.itemgetter(1))[0])
